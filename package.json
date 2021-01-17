@@ -1,0 +1,23 @@
+{
+  "name": "pastebin-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "keywords": [],
+  "author": "Dunkan.DC",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "better-pastebin": "^0.4.1",
+    "dotenv": "^8.2.0",
+    "telegraf": "^3.38.0"
+  },
+  "engines": {
+    "node": "15.1.0"
+  }
+}
