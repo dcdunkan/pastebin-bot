@@ -261,7 +261,7 @@ getSyntax.on('text', async (ctx) => {
 })
 
 getPrivacy.enter((ctx) => {
-    const getPrivacKeyboard = [];
+    var getPrivacKeyboard = [];
     if(ctx.session.isGuest == true){
         getPrivacKeyboard = [
             [{text : '📢 Public',callback_data : 'public'}],
