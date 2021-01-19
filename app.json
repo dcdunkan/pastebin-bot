@@ -1,0 +1,26 @@
+{
+  "name": "Pastebin Bot",
+  "description": "A simple but advaced pastebin telegram bot made by Bots.DC",
+  "logo": "https://upload.wikimedia.org/wikipedia/en/3/35/Pastebin.com_logo.png",
+  "keywords": [
+    "telegram",
+    "pastebin"
+    "bot",
+    "dc",
+    "dcdunkan"
+  ],
+  "success_url": "https://telegram.me/pstbinbot",
+  "website": "https://t.me/dcbotz",
+  "repository": "https://github.com/dcdunkan/pastebin-bot",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Your bot token, as a string. Get it from https://telegram.me/botfather",
+      "value": ""
+    },
+    "PASTE_DEVKEY": {
+      "description": "Your pastebin developer key, as a string. Get it from https://pastebin.com/doc_api#1 after logging in.",
+      "value": ""
+    }
+  },
+  "stack": "container"
+}
