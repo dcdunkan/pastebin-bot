@@ -164,12 +164,12 @@ login.enter((ctx) => {
 })
 guest.action('format', (ctx) => {
     const msg = ctx.update.callback_query.message;
-    ctx.telegram.editMessageText( msg.chat.id, msg.message_id, msg.message_id, `Send a new syntax formatting to continue.\nCurrent Syntax is setted to : *${ctx.session.privacy}*\n\nIf you don't know which are these available syntaxes, check this [page](https://pastebin.com/doc_api#5) and enter a valid one. Or it will get an error`, { parse_mode : 'Markdown', disable_web_page_preview : true })
+    ctx.telegram.editMessageText( msg.chat.id, msg.message_id, msg.message_id, `Send a new syntax formatting to continue.\nCurrent Syntax is setted to : *${ctx.session.format}*\n\nIf you don't know which are these available syntaxes, check this [page](https://pastebin.com/doc_api#5) and enter a valid one. Or it will get an error`, { parse_mode : 'Markdown', disable_web_page_preview : true })
     ctx.scene.enter('getSyntax')
 })
 login.action('format', (ctx) => {
     const msg = ctx.update.callback_query.message;
-    ctx.telegram.editMessageText( msg.chat.id, msg.message_id, msg.message_id, `Send a new syntax formatting to continue.\nCurrent Syntax is setted to : *${ctx.session.privacy}*\n\nIf you don't know which are these available syntaxes, check this [page](https://pastebin.com/doc_api#5) and enter a valid one. Or it will get an error`, { parse_mode : 'Markdown', disable_web_page_preview : true })
+    ctx.telegram.editMessageText( msg.chat.id, msg.message_id, msg.message_id, `Send a new syntax formatting to continue.\nCurrent Syntax is setted to : *${ctx.session.format}*\n\nIf you don't know which are these available syntaxes, check this [page](https://pastebin.com/doc_api#5) and enter a valid one. Or it will get an error`, { parse_mode : 'Markdown', disable_web_page_preview : true })
     ctx.scene.enter('getSyntax')
 })
 guest.action('privacy', async (ctx) => {
@@ -234,7 +234,7 @@ loginPaste.action('login-paste', async (ctx) => {
                 if(success) {
                     const raw = "https://pastebin.com/raw/" + data.split('/')[3];
                     ctx.telegram.editMessageText( msg.chat.id, msg.message_id, msg.message_id,
-                        `The Paste [${ctx.session.name}](${data}) has been Successfully Pasted at ${data}`, { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/dctesterbot?start=emb_${data.split('/')[3]}` }]]}
+                        `The Paste [${ctx.session.name}](${data}) has been Successfully Pasted at ${data}`, { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/pstbinbot?start=emb_${data.split('/')[3]}` }]]}
                     });
                 } else {
                     ctx.telegram.editMessageText( msg.chat.id, msg.message_id, msg.message_id,
@@ -463,7 +463,7 @@ guest.action('paste-guest', (ctx) => {
         if(success) {
             const raw = "https://pastebin.com/raw/" + data.split('/')[3];
             ctx.telegram.editMessageText( msg.chat.id, msg.message_id, msg.message_id,
-                       `The Paste [${ctx.session.name}](${data}) has been Successfully Pasted at ${data}`, { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/dctesterbot?start=emb_${data.split('/')[3]}` }]]}
+                       `The Paste [${ctx.session.name}](${data}) has been Successfully Pasted at ${data}`, { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/pstbinbot?start=emb_${data.split('/')[3]}` }]]}
             });
             ctx.scene.leave('guest')
         } else {
