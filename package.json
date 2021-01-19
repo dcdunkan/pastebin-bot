@@ -16,8 +16,5 @@
     "better-pastebin": "^0.4.1",
     "dotenv": "^8.2.0",
     "telegraf": "^3.38.0"
-  },
-  "engines": {
-    "node": "15.1.0"
   }
 }
