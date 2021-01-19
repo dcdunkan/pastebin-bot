@@ -465,10 +465,12 @@ guest.action('paste-guest', (ctx) => {
             ctx.telegram.editMessageText( msg.chat.id, msg.message_id, msg.message_id,
                        `The Paste [${ctx.session.name}](${data}) has been Successfully Pasted at ${data}`, { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/dctesterbot?start=emb_${data.split('/')[3]}` }]]}
             });
+            ctx.scene.leave('guest')
         } else {
             ctx.telegram.editMessageText( msg.chat.id, msg.message_id, msg.message_id,
                 `Some kind of error occurred. Error Data : ${data}`, { parse_mode : "Markdown" }
             );
+            ctx.scene.leave('guest')
         }
     });
 })
