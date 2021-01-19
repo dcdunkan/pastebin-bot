@@ -471,7 +471,6 @@ guest.action('paste-guest', (ctx) => {
             );
         }
     });
-    ctx.scene.leave('guest')
 })
 
 bot.launch({
