@@ -462,7 +462,8 @@ guest.action('paste-guest', (ctx) => {
     }, function(success, data) {
         if(success) {
             const raw = "https://pastebin.com/raw/" + data.split('/')[3];
-            ctx.reply(`The Paste [${ctx.session.name}](${data}) has been Successfully Pasted at ${data}`, { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/dctesterbot?start=emb_${data.split('/')[3]}` }]]}
+            ctx.telegram.editMessageText( msg.chat.id, msg.message_id, msg.message_id,
+                       `The Paste [${ctx.session.name}](${data}) has been Successfully Pasted at ${data}`, { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/dctesterbot?start=emb_${data.split('/')[3]}` }]]}
             });
         } else {
             ctx.telegram.editMessageText( msg.chat.id, msg.message_id, msg.message_id,
