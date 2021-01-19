@@ -474,7 +474,7 @@ guest.action('paste-guest', (ctx) => {
     ctx.scene.leave('guest')
 })
 
-bot.launch({
+bot.startPolling({
   webhook: {
     domain: process.env.BOT_DOMAIN,
     port: process.env.PORT
