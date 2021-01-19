@@ -217,8 +217,8 @@ getPass.on('text', async (ctx) => {
 })
 
 loginPaste.enter((ctx) => ctx.reply("Click the button to confirm your paste by logging in. It may take upto 10 seconds. Please be patient. Thankyou for using our service. ", { reply_markup : {inline_keyboard : [[{ text : "Login and Paste", callback_data :'login-paste' }]] }}))
-loginPaste.action('login-paste', (ctx) => {
-    paste.login(ctx.session.username, ctx.session.pass, function(success, data) {
+loginPaste.action('login-paste', async (ctx) => {
+    await paste.login(ctx.session.username, ctx.session.pass, function(success, data) {
         if(!success) {
             ctx.reply('Some error occurred while logging in. Please try again later. Make sure that the username and password is correct.')
             return false;
