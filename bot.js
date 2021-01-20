@@ -80,8 +80,8 @@ bot.action('create', async (ctx) => {
 })
 
 // getPaste.command('cancel', (ctx) => ctx.reply(config.messages.PASTE_CREATION_CANCELLED_MESSAGE))
-getPaste.command('cancel', (ctx) =>{
-    ctx.reply(config.messages.PASTE_CREATION_CANCELLED_MESSAGE)
+getPaste.command('cancel', async (ctx) =>{
+    await ctx.reply(config.messages.PASTE_CREATION_CANCELLED_MESSAGE)
     ctx.scene.leave('getPaste')
 })
 getUsername.enter((ctx) => ctx.reply('*Send a valid username* that already registered on pastebin.com. If the username you giving is invalid, the paste creation will get stopped.\nHit /cancel to cancel this process.', { parse_mode : "Markdown", disable_web_page_preview: true }))
