@@ -79,11 +79,15 @@ bot.action('create', async (ctx) => {
     ctx.scene.enter('getPaste');
 })
 
-getPaste.command('cancel', (ctx) => ctx.reply(config.messages.PASTE_CREATION_CANCELLED_MESSAGE))
+// getPaste.command('cancel', (ctx) => ctx.reply(config.messages.PASTE_CREATION_CANCELLED_MESSAGE))
+getPaste.command('cancel', (ctx) =>{
+    ctx.reply(config.messages.PASTE_CREATION_CANCELLED_MESSAGE)
+    ctx.scene.leave('getPaste')
+})
 getUsername.enter((ctx) => ctx.reply('*Send a valid username* that already registered on pastebin.com. If the username you giving is invalid, the paste creation will get stopped.\nHit /cancel to cancel this process.', { parse_mode : "Markdown", disable_web_page_preview: true }))
 getPass.enter((ctx) => ctx.reply('*Send the password* for the account now.\nDonot worry about security. We are not storing your password or username, even the paste. Also, you will be able to monitor any security issues through your mail.\nHit /cancel to cancel this process.', { parse_mode : "Markdown", disable_web_page_preview: true }))
 
-getPaste.command('cancel', (ctx) => ctx.reply(config.messages.PASTE_CREATION_CANCELLED_MESSAGE))
+// getPaste.command('cancel', (ctx) => ctx.reply(config.messages.PASTE_CREATION_CANCELLED_MESSAGE))
 getUsername.command('cancel', (ctx) => ctx.reply(config.messages.PASTE_CREATION_CANCELLED_MESSAGE))
 getPass.command('cancel', (ctx) => ctx.reply(config.messages.PASTE_CREATION_CANCELLED_MESSAGE))
 method.command('cancel', (ctx) => ctx.reply(config.messages.PASTE_CREATION_CANCELLED_MESSAGE, { parse_mode : "Markdown" , remove_keyboard: true }))
