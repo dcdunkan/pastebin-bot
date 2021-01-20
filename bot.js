@@ -131,12 +131,11 @@ method.hears('Login and Paste', (ctx) => {
 })
 
 
-guest.enter((ctx) => {
+guest.enter(async (ctx) => {
+    await ctx.reply('Please wait...', { reply_markup: { remove_keyboard: true } })
     ctx.reply(`So, you are ready to *paste as a guest*. Change the options if you want to.\nCurrent Status\nName : ${ctx.session.name}\nSyntax : ${ctx.session.format}\nPrivacy : ${ctx.session.privacy}\nExpires : ${ctx.session.expires}\n`,
         {   parse_mode : 'Markdown',
-            remove_keyboard : true,
-            reply_markup : { 
-                remove_keyboard: true, 
+            reply_markup : {
                 inline_keyboard : [
                     [{ text: `Syntax : ${ctx.session.format}`, callback_data: 'format' }],
                     [{ text: `Privacy : ${ctx.session.privacy}`, callback_data: 'privacy' }],
@@ -146,12 +145,11 @@ guest.enter((ctx) => {
             }
         });
 })
-login.enter((ctx) => {
+login.enter(async (ctx) => {
+    await ctx.reply('Please wait...', { reply_markup: { remove_keyboard: true } })
     ctx.reply(`So, you are ready to *login and paste*. Change the options if you want to.\nCurrent Status\nName : ${ctx.session.name}\nSyntax : ${ctx.session.format}\nPrivacy : ${ctx.session.privacy}\nExpires : ${ctx.session.expires}\n`,
         {   parse_mode : 'Markdown',
-            remove_keyboard : true,
             reply_markup : { 
-                remove_keyboard: true, 
                 inline_keyboard : [
                     [{ text: `Syntax : ${ctx.session.format}`, callback_data: 'format' }],
                     [{ text: `Privacy : ${ctx.session.privacy}`, callback_data: 'privacy' }],
