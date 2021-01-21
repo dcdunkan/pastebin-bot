@@ -223,6 +223,8 @@ loginPaste.action('login-paste', async (ctx) => {
     await paste.login(ctx.session.username, ctx.session.pass, function(success, data) {
         if(!success) {
             ctx.reply('Some error occurred while logging in. Please try again later. Make sure that the username and password is correct.')
+            ctx.session.username = ""
+            ctx.session.pass = ""
             return false;
         } else {
             const msg = ctx.update.callback_query.message;
@@ -236,12 +238,14 @@ loginPaste.action('login-paste', async (ctx) => {
                 if(success) {
                     const raw = "https://pastebin.com/raw/" + data.split('/')[3];
                     ctx.telegram.editMessageText( msg.chat.id, msg.message_id, msg.message_id,
-                        `The Paste [${ctx.session.name}](${data}) has been Successfully Pasted at ${data}`, { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/pstbinbot?start=emb_${data.split('/')[3]}` }]]}
-                    });
+                        `The Paste [${ctx.session.name}](${data}) has been Successfully Pasted at ${data}`, { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/pstbinbot?start=emb_${data.split('/')[3]}` }]]}});
+                    ctx.session.username = ""
+                    ctx.session.pass = ""
                 } else {
                     ctx.telegram.editMessageText( msg.chat.id, msg.message_id, msg.message_id,
-                        `Some kind of error occurred. Error Data : ${data}`, { parse_mode : "Markdown" }
-                    );
+                        `Some kind of error occurred. Error Data : ${data}`, { parse_mode : "Markdown" });
+                    ctx.session.username = ""
+                    ctx.session.pass = ""
                 }
             });
             ctx.scene.leave('loginPaste')
