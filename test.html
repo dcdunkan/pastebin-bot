@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Testimonials</h1>
+    <div class="testimonials">
+        <div class="scroller">
+            <div class="item">
+                <img src="testimonial1.jpg" alt="Elise">
+                <div class="card">
+                    <p>
+                        Eu rebum molestie per. No nostrud imperdiet abhorreant qui, hinc incorrupte vix ad. Vel id aliquip oblique. Primis feugait sit an, brute illud convenire duo ea. Graece tempor eripuit sed in.
+                    </p>
+                    <span>Elise</span>
+                </div>
+            </div>
+            <div class="item">
+                <img src="testimonial2.jpg" alt="John">
+                <div class="card">
+                    <p>
+                        Vitae pericula maluisset ut mei, pro eleifend gubergren eu. Et his brute graeci. Affert ponderum ei vel, dolorum accumsan ea has. Sea oblique salutatus ei, simul lucilius pri et. Errem melius temporibus ut eos
+                    </p>
+                    <span>John</span>
+                </div>
+            </div>
+            <div class="item">
+                <img src="testimonial3.jpg" alt="Imani">
+                <div class="card">
+                    <p>
+                        Ne est virtute indoctum, quaeque vituperata cum ut. Te nisl quaeque pri. Vix ex autem latine, mel ne nobis scaevola, ei est dolor utinam commune. Pri unum doctus in, cu primis pertinax eos.
+                    </p>
+                    <span>Imani</span>
+                </div>
+             </div>
+        </div>
+        <span class="btn prev">&lt;</span>
+        <span class="btn next">&gt;</span>
+    </div>
+    <script>
+        const testimonials = document.querySelector('.testimonials');
+        const scroller = testimonials.querySelector('.scroller');
+        const nextBtn = testimonials.querySelector('.btn.next');
+        const prevBtn = testimonials.querySelector('.btn.prev');
+        const itemWidth = testimonials.querySelector('.item').clientWidth;
+
+        nextBtn.addEventListener('click', scrollToNextItem);
+        prevBtn.addEventListener('click', scrollToPrevItem);
+
+        function scrollToNextItem() {
+            if(scroller.scrollLeft < (scroller.scrollWidth - itemWidth))
+                // The scroll position is not at the beginning of last item
+                scroller.scrollBy({left: itemWidth, top: 0, behavior:'smooth'});
+            else
+                // Last item reached. Go back to first item by setting scroll position to 0
+                scroller.scrollTo({left: 0, top: 0, behavior:'smooth'});
+        }
+        function scrollToPrevItem() {
+            if(scroller.scrollLeft != 0)
+                // The scroll position is not at the beginning of first item
+                scroller.scrollBy({left: -itemWidth, top: 0, behavior:'smooth'});
+            else
+                // This is the first item. Go to last item by setting scroll position to scroller width
+                scroller.scrollTo({left: scroller.scrollWidth, top: 0, behavior:'smooth'});
+        }
+    </script>
+</body>
+</html>
