@@ -24,6 +24,7 @@ Advanced functional Pastebin Telegram Bot made using <a href="https://npmjs.com/
 
 ### $ deploy
 Simply deploy the application to heroku by clicking the button below. You will need a **telegram bot token**, a **pastebin developer key**, and your **application's subdomain or the domain** you are using. Read below to find how to get all the values.
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dcdunkan/pastebin-bot)
 * `BOT_TOKEN` : Get this value from [BotFather](https://telegram.me/botfather) on telegram by creating a new bot.
 * `PASTE_DEVKEY` : You can get this value from [here](https://pastebin.com/doc_api#1) after logging into pastebin.
