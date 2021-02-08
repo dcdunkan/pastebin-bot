@@ -3,6 +3,8 @@
 ### Version 2 of Pastebin Bot
 Advanced functional Pastebin Telegram Bot made using <a href="https://npmjs.com/package/better-pastebin">better-pastebin</a> and <a href="https://npmjs.com/package/telegraf">TelegrafJS</a>. This bot will help you to create pastes (Texts) on [Pastebin](https://pastebin.com) <sup id="footn1">[[1]](#pastebin-description)</sup> which is a text cloud. Here is a running example of the bot <a href="https://telegram.me/pstbinbot">@pstbinbot</a> on telegram.
 
+Packages used : telegraf, firebase, better-pastebin, node-fetch, dotenv
+
 #### contents
 [How to use?](#-how-to-use) | [Deploy](#-deploy) | [To-Do](#-to-do) | [Any Ideas?](#-contribute)
 
