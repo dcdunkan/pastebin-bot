@@ -25,49 +25,55 @@
       "description": "MUST Set this value to <yourappname>.herokuapp.com . Or the bot won't work properly.",
       "value": "<>.herokuapp.com"
     },
-    "BOT_DOMAIN": {
-      "description": "MUST Set this value to <yourappname>.herokuapp.com . Or the bot won't work properly.",
-      "value": "<>.herokuapp.com"
-    },
     "LOG_CHANNEL": {
       "description": "To log user actions, provide a chat ID, or channel ID where the bot is an admin.",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "FIREBASE": {
       "description": "Set to true if you want to log users in firebase' realtime database. You have to set the other required parameters to activate this features completely.",
-      "value": "false"
+      "value": "false",
+      "required": false
     },
     "FB_APIKEY": {
       "description": "ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app. Read documentation at https://github.com/dcdunkan/pastebin-bot",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "FB_AUTHDOMAIN": {
       "description": "ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app. Read documentation at https://github.com/dcdunkan/pastebin-bot",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "FB_DATABASEURL": {
       "description": "ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app. Read documentation at https://github.com/dcdunkan/pastebin-bot",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "FB_PROJECTID": {
       "description": "ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app. Read documentation at https://github.com/dcdunkan/pastebin-bot",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "FB_STORAGEBUCKET": {
       "description": "ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app. Read documentation at https://github.com/dcdunkan/pastebin-bot",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "FB_MESSAGINGSENDERID": {
       "description": "ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app. Read documentation at https://github.com/dcdunkan/pastebin-bot",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "FB_APPID": {
       "description": "ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app. Read documentation at https://github.com/dcdunkan/pastebin-bot",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "FB_MEASUREMENTID": {
       "description": "ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app. Read documentation at https://github.com/dcdunkan/pastebin-bot",
-      "value": ""
+      "value": "",
+      "required": false
     }
   },
   "stack": "container"
