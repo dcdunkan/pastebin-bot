@@ -31,15 +31,15 @@ Simply deploy the application to heroku by clicking the button below. You will n
 * `BOT_DOMAIN` : Set this value to `<yourappname>.herokuapp.com`. Or if you are using a custom domain, enter it without `https://` or slash `'/'` at the end.
 * `LOG_CHANNEL` : To log user actions, provide a chat ID, or channel ID where the bot is an admin.
 * `FIREBASE` : Set to true if you want to log users in firebase' realtime database. You have to set the other required parameters to activate this features completely.
-**Required Parameters for firebase feature.**
-* `FB_APIKEY` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app. As 
-* `FB_FB_AUTHDOMAIN` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app.
-* `FB_DATABASEURL` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app.
-* `FB_PROJECTID` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app.
-* `FB_STORAGEBUCKET` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app.
-* `FB_MESSAGINGSENDERID` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app.
-* `FB_APPID` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app.
-* `FB_MEASUREMENTID` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app.
+  **Required Parameters for firebase feature.**
+  * `FB_APIKEY` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app. As 
+  * `FB_FB_AUTHDOMAIN` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app.
+  * `FB_DATABASEURL` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app.
+  * `FB_PROJECTID` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app.
+  * `FB_STORAGEBUCKET` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app.
+  * `FB_MESSAGINGSENDERID` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app.
+  * `FB_APPID` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app.
+  * `FB_MEASUREMENTID` : ONLY NEEDED IF `FIREBASE` IS SET TO TRUE. Get this value while creating a firebase app.
 
 **The firebase project parameters should look like**
 ``` javascript
