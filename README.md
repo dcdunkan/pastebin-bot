@@ -27,7 +27,7 @@ Packages used : telegraf, firebase, better-pastebin, node-fetch, dotenv
 ### $ deploy
 Simply deploy the application to heroku by clicking the button below. You will need a **telegram bot token**, a **pastebin developer key**, and your **application's subdomain or the domain** you are using. Read below to find how to get all the values.
 
- <a href= "https://heroku.com/deploy?template=https://github.com/dcdunkan/pastebin-bot"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a>
+ <a href="https://heroku.com/deploy?template=https://github.com/dcdunkan/pastebin-bot" target="_blank"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a>
  
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dcdunkan/pastebin-bot)
 * `BOT_TOKEN` : Get this value from [BotFather](https://telegram.me/botfather) on telegram by creating a new bot.
