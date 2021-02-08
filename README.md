@@ -73,4 +73,4 @@ Please make an issue or pull a request if you got any ideas. Also, this project 
 
 <a href="#footn1" id="pastebin-description">[1]</a>: Pastebin.com is the number one paste tool since 2002. Pastebin is a website where you can store text online for a set period of time.
 
-[Go back to top ^](#-pastebin-botjs)
+[Go back to top ^](#-pastebin-botjs-v2)
