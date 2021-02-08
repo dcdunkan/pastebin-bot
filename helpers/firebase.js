@@ -1,7 +1,11 @@
 const config = require("../config");
 const firebase = require('firebase');
-firebase.initializeApp(config.firebaseConfig);
-var database = firebase.database();
+if(config.firebase == true){
+    firebase.initializeApp(config.firebaseConfig);
+} else {
+    console.log("firebase is not enabled");
+}
+
 
 async function writeifnot(uid, username){
     if(config.firebase == true){
