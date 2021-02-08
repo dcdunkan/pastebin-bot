@@ -53,11 +53,13 @@ stage.register(datadl);
 bot.use(session());
 bot.use(stage.middleware());
 
+const log_channel = parseInt(process.env.LOG_CHANNEL)
+
 async function ownerLog(method, msg){
-    if(process.env.LOG_CHANNEL !== undefined){
+    if(log_channel !== undefined){
         // method as a string "Start", "Error", "Pasted"
     const message = `[Pastebin Bot](https://telegram.me/pstbinbot)\n*${method}*\n${msg}\n\n#pastebin`
-    bot.telegram.sendMessage(process.env.LOG_CHANNEL, message, { parse_mode : 'Markdown', disable_web_page_preview : true })
+    bot.telegram.sendMessage(log_channel, message, { parse_mode : 'Markdown', disable_web_page_preview : true })
     } else {
         console.log('To log user actions, provide a chat ID, or channel ID where the bot is an admin.')
     }
