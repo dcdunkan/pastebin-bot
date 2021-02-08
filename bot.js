@@ -10,7 +10,7 @@ const { Telegraf } = require('telegraf');
 const session = require('telegraf/session');
 const Stage = require('telegraf/stage');
 const Scene = require('telegraf/scenes/base');
-const bot = new Telegraf(process.env.BOT_TOKEN);
+const bot = new Telegraf(process.env.BOT_TOKEN, {telegram: {webhookReply: false}});
 
 // Scene Manager
 const stage = new Stage();
@@ -776,4 +776,9 @@ guest.action('paste-guest', async (ctx) => {
 
 console.log('pastebin-bot compiled successfully')
 console.log('pastebin-bot now running...')
-bot.startPolling()
+bot.launch({
+  webhook: {
+    domain: process.env.BOT_DOMAIN,
+    port: process.env.PORT
+  }
+})
