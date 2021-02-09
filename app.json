@@ -17,6 +17,10 @@
       "description": "Your bot token, as a string. Get it from https://telegram.me/botfather",
       "value": ""
     },
+    "BOT_USERNAME": {
+      "description": "Your bot username. Required for added features. Enter without '@'",
+      "value": ""
+    },
     "PASTE_DEVKEY": {
       "description": "Your pastebin developer key, as a string. Get it from https://pastebin.com/doc_api#1 after logging in.",
       "value": ""
