@@ -57,9 +57,13 @@ const log_channel = parseInt(process.env.LOG_CHANNEL)
 
 async function ownerLog(method, msg){
     if(log_channel !== undefined){
+        // You will get an error if the log chat/channel id is not accessible by bot.
+        // To not get that error provide the channel id where your bot is an admin, or a chat id that chatted previously with th bot.
+        // The error will be : chat not found.
+
         // method as a string "Start", "Error", "Pasted"
-    const message = `[Pastebin Bot](https://telegram.me/pstbinbot)\n*${method}*\n${msg}\n\n#pastebin`
-    bot.telegram.sendMessage(log_channel, message, { parse_mode : 'Markdown', disable_web_page_preview : true })
+        const message = `[Pastebin Bot](https://telegram.me/${process.env.BOT_USERNAME})\n*${method}*\n${msg}\n\n#pastebin`
+        bot.telegram.sendMessage(log_channel, message, { parse_mode : 'Markdown', disable_web_page_preview : true })
     } else {
         console.log('To log user actions, provide a chat ID, or channel ID where the bot is an admin.')
     }
@@ -427,7 +431,7 @@ loginPaste.action('login-paste', async (ctx) => {
                     if(success) {
                         const raw = "https://pastebin.com/raw/" + data.split('/')[3];
                         ctx.telegram.editMessageText( msg.chat.id, msg.message_id, msg.message_id,
-                            `The Paste [${ctx.session.name}](${data}) has been Successfully Pasted at ${data}`, { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/pstbinbot?start=emb_${data.split('/')[3]}` }], [{ text: 'Download paste as file', url : `https://t.me/pstbinbot?start=dl_${data.split('/')[3]}` }]]}});
+                            `The Paste [${ctx.session.name}](${data}) has been Successfully Pasted at ${data}`, { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/${process.env.BOT_USERNAME}?start=emb_${data.split('/')[3]}` }], [{ text: 'Download paste as file', url : `https://t.me/${process.env.BOT_USERNAME}?start=dl_${data.split('/')[3]}` }]]}});
                         ctx.session.username = ""
                         ctx.session.pass = ""
                         ctx.session.paste = ""
@@ -457,7 +461,7 @@ loginPaste.action('login-paste', async (ctx) => {
                         const raw = "https://pastebin.com/raw/" + data.split('/')[3]
                         await ctx.telegram.editMessageText(msg.chat.id, msg.message_id, msg.message_id,
                             `The Paste [${ctx.session.name}](${data}) has been Successfully Pasted at ${data}`,
-                            { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/pstbinbot?start=emb_${data.split('/')[3]}` }]]}});
+                            { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/${process.env.BOT_USERNAME}?start=emb_${data.split('/')[3]}` }]]}});
                         ctx.session.username = ""
                         ctx.session.pass = ""
                         ctx.session.paste = ""
@@ -732,7 +736,7 @@ guest.action('paste-guest', async (ctx) => {
             if(success) {
                 const raw = "https://pastebin.com/raw/" + data.split('/')[3];
                 ctx.telegram.editMessageText( msg.chat.id, msg.message_id, msg.message_id,
-                       `The Paste [${ctx.session.name}](${data}) has been Successfully Pasted at ${data}`, { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/pstbinbot?start=emb_${data.split('/')[3]}` }], [{ text: 'Download paste as file', url : `https://t.me/pstbinbot?start=dl_${data.split('/')[3]}` }]]}
+                       `The Paste [${ctx.session.name}](${data}) has been Successfully Pasted at ${data}`, { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/${process.env.BOT_USERNAME}?start=emb_${data.split('/')[3]}` }], [{ text: 'Download paste as file', url : `https://t.me/${process.env.BOT_USERNAME}?start=dl_${data.split('/')[3]}` }]]}
                 });
                 ownerLog('Created a paste successfully', `[${msg.chat.id}](tg://user?id=${msg.chat.id}) Pasted with text(${ctx.session.format}) as ${ctx.session.privacy}. ${data}\nLogin mode : false`)
                 ctx.session.paste = ""
@@ -761,7 +765,7 @@ guest.action('paste-guest', async (ctx) => {
                 const raw = "https://pastebin.com/raw/" + data.split('/')[3]
                 await ctx.telegram.editMessageText(msg.chat.id, msg.message_id, msg.message_id,
                     `The Paste [${ctx.session.name}](${data}) has been Successfully Pasted at ${data}`,
-                     { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/pstbinbot?start=emb_${data.split('/')[3]}` }]]}});
+                     { parse_mode : "Markdown", reply_markup: { inline_keyboard : [[{text : "See on browser", url : data }], [{text : "RAW Data", url : raw }, { text : 'Embed Codes', url : `http://t.me/${process.env.BOT_USERNAME}?start=emb_${data.split('/')[3]}` }]]}});
                 ctx.session.paste = ""
                 ownerLog('Created a paste successfully', `[${msg.chat.id}](tg://user?id=${msg.chat.id}) Pasted with file as ${ctx.session.privacy}. ${data}\nLogin mode : false`)
             } else {
