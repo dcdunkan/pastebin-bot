@@ -29,7 +29,7 @@ Simply deploy the application to heroku by clicking the button below. You will n
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dcdunkan/pastebin-bot)
 * `BOT_TOKEN` : Get this value from [BotFather](https://telegram.me/botfather) on telegram by creating a new bot.
-* `BOT_USERNAME` : Your bot's username. This will be used to create deep linking which is used to embed code, download paste as file features.
+* `BOT_USERNAME` : Your bot's username. This will be used to create deep linking which is used to embed code, download paste as file features. Enter without`@`
 * `PASTE_DEVKEY` : You can get this value from [here](https://pastebin.com/doc_api#1) after logging into pastebin.
 * `BOT_DOMAIN` : Set this value to `<yourappname>.herokuapp.com`. Or if you are using a custom domain, enter it without `https://` or slash `'/'` at the end.
 * `LOG_CHANNEL` : To log user actions, provide a chat ID, or channel ID where the bot is an admin.
