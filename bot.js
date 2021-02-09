@@ -323,7 +323,7 @@ guest.enter(async (ctx) => {
                     [{ text: `Change Name`, callback_data: 'name' }],
                     [{ text: `Change Syntax`, callback_data: 'format' }],
                     [{ text: `Change Exposure/Privacy`, callback_data: 'privacy' }],
-                    [{ text: `Change Expiry : ${ctx.session.expires}`, callback_data: 'expiry' }],
+                    [{ text: `Change Expiry`, callback_data: 'expiry' }],
                     [{ text: '✔️ Done', callback_data: 'done-opts' }]
                 ]
             }
