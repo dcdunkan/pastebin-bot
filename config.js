@@ -37,11 +37,12 @@ config.msgopts = {
     help_msg_opts : { parse_mode : 'Markdown', disable_web_page_preview : true, reply_markup : { inline_keyboard : [ [ { text : '01', callback_data : '01' }, { text : '02', callback_data : '02' }, { text : '03', callback_data : '03' }, { text : '04', callback_data : '04' } ], [ { text : 'Home', callback_data : 'home' }, { text : 'About', callback_data : 'about' } ], [ { text : 'Create a Paste', callback_data : 'create' } ] ] } },
     about_msg_opts : { parse_mode : 'Markdown', disable_web_page_preview : true, reply_markup : { inline_keyboard : [ [ { text : 'Source Code', callback_data : 'source-code' } ], [ { text : 'What is Pastebin?', callback_data : 'pastebin-w' } ], [ { text : 'Home', callback_data : 'home' }, { text : 'Help', callback_data : 'help' } ], [ { text : 'Create a Paste', callback_data : 'create' } ] ] } },
 
-    help_1_opts : { parse_mode : 'Markdown', reply_markup : { inline_keyboard : [ [ { text : '< 04', callback_data : '04' }, { text : '02 >', callback_data : '02' }, { text : 'Go back', callback_data : 'help' } ] ] } },
+    help_1_opts : { parse_mode : 'Markdown', reply_markup : { inline_keyboard : [ [ { text : '< 06', callback_data : '06' }, { text : '02 >', callback_data : '02' }, { text : 'Go back', callback_data : 'help' } ] ] } },
     help_2_opts : { parse_mode : 'Markdown', reply_markup : { inline_keyboard : [ [ { text : '< 01', callback_data : '01' }, { text : '03 >', callback_data : '03' }, { text : 'Go back', callback_data : 'help' } ] ] } },
     help_3_opts : { parse_mode : 'Markdown', disable_web_page_preview : false, reply_markup : { inline_keyboard : [ [ { text : '< 02', callback_data : '02' }, { text : '04 >', callback_data : '04' }, { text : 'Go back', callback_data : 'help' } ] ] } }, 
-    help_4_opts : { parse_mode : 'Markdown', reply_markup : { inline_keyboard : [ [ { text : '< 03', callback_data : '03' }, { text : '01 >', callback_data : '01' }, { text : 'Go back', callback_data : 'help' } ] ] } },
-
+    help_4_opts : { parse_mode : 'Markdown', reply_markup : { inline_keyboard : [ [ { text : '< 03', callback_data : '03' }, { text : '05 >', callback_data : '05' }, { text : 'Go back', callback_data : 'help' } ] ] } },
+    help_5_opts : { parse_mode : 'Markdown', disable_web_page_preview : false, reply_markup : { inline_keyboard : [ [ { text : '< 04', callback_data : '04' }, { text : '06 >', callback_data : '06' }, { text : 'Go back', callback_data : 'help' } ] ] } }, 
+    help_6_opts : { parse_mode : 'Markdown', reply_markup : { inline_keyboard : [ [ { text : '< 05', callback_data : '05' }, { text : '01 >', callback_data : '01' }, { text : 'Go back', callback_data : 'help' } ] ] } },
     source_code_opts : { parse_mode : 'Markdown', reply_markup: { inline_keyboard : [[ { text: '< Go back', callback_data: 'about' } ]] } }
 }
 
