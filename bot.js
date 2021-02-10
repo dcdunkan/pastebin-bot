@@ -141,7 +141,7 @@ bot.action('about', (ctx) => {
 })
 bot.action('home', (ctx) => {
     const msg = ctx.update.callback_query.message
-    ctx.telegram.editMessageText(msg.chat.id, msg.message_id, msg.message_id, config.msg.start_message, config.msgopts.start_msg_opts )
+    ctx.telegram.editMessageText(msg.chat.id, msg.message_id, msg.message_id, config.msg.start_msg, config.msgopts.start_msg_opts )
 })
 bot.action('pastebin-w', (ctx) => {
     const msg = ctx.update.callback_query.message
