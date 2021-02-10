@@ -169,11 +169,11 @@ bot.action('04', (ctx) => {
 })
 bot.action('05', (ctx) => {
     const msg = ctx.update.callback_query.message;
-    ctx.telegram.editMessageText(msg.chat.id, msg.message_id, msg.message_id, config.msg.help_5_msg, config.msgopts.help_4_opts )
+    ctx.telegram.editMessageText(msg.chat.id, msg.message_id, msg.message_id, config.msg.help_5_msg, config.msgopts.help_5_opts )
 })
 bot.action('06', (ctx) => {
     const msg = ctx.update.callback_query.message;
-    ctx.telegram.editMessageText(msg.chat.id, msg.message_id, msg.message_id, config.msg.help_6_msg, config.msgopts.help_5_opts )
+    ctx.telegram.editMessageText(msg.chat.id, msg.message_id, msg.message_id, config.msg.help_6_msg, config.msgopts.help_6_opts )
 })
 
 
