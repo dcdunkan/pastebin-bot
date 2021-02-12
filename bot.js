@@ -181,30 +181,37 @@ bot.action('06', (ctx) => {
 bot.command('cancel', (ctx) => ctx.reply("No process running to get cancelled."))
 getPaste.command('cancel', async (ctx) =>{
     await ctx.reply(config.msg.cancelled_msg)
+    ctx.session.paste = ""
     ctx.scene.leave('getPaste')
 })
 getName.command('cancel', async (ctx) =>{
     await ctx.reply(config.msg.cancelled_msg)
+    ctx.session.paste = ""
     ctx.scene.leave('getName')
 })
 method.command('cancel', async (ctx) =>{
     await ctx.reply(config.msg.cancelled_msg)
+    ctx.session.paste = ""
     ctx.scene.leave('method')
 })
 guest.command('cancel', async (ctx) =>{
     await ctx.reply(config.msg.cancelled_msg)
+    ctx.session.paste = ""
     ctx.scene.leave('guest')
 })
 login.command('cancel', async (ctx) =>{
     await ctx.reply(config.msg.cancelled_msg)
+    ctx.session.paste = ""
     ctx.scene.leave('login')
 })
 loginPaste.command('cancel', async (ctx) =>{
     await ctx.reply(config.msg.cancelled_msg)
+    ctx.session.paste = ""
     ctx.scene.leave('loginPaste')
 })
 changeName.command('cancel', async (ctx) =>{
     await ctx.reply(config.msg.cancelled_msg)
+    ctx.session.paste = ""
     ctx.scene.leave('changeName')
     if(ctx.session.isGuest == true){
         ctx.scene.leave('guest')
@@ -214,6 +221,7 @@ changeName.command('cancel', async (ctx) =>{
 })
 getExpiry.command('cancel', async (ctx) =>{
     await ctx.reply(config.msg.cancelled_msg)
+    ctx.session.paste = ""
     ctx.scene.leave('getExpiry')
     if(ctx.session.isGuest == true){
         ctx.scene.leave('guest')
@@ -223,6 +231,7 @@ getExpiry.command('cancel', async (ctx) =>{
 })
 getSyntax.command('cancel', async (ctx) =>{
     await ctx.reply(config.msg.cancelled_msg)
+    ctx.session.paste = ""
     ctx.scene.leave('getSyntax')
     if(ctx.session.isGuest == true){
         ctx.scene.leave('guest')
@@ -232,6 +241,7 @@ getSyntax.command('cancel', async (ctx) =>{
 })
 getPrivacy.command('cancel', async (ctx) =>{
     await ctx.reply(config.msg.cancelled_msg)
+    ctx.session.paste = ""
     ctx.scene.leave('getPrivacy')
     if(ctx.session.isGuest == true){
         ctx.scene.leave('guest')
@@ -241,10 +251,12 @@ getPrivacy.command('cancel', async (ctx) =>{
 })
 getUsername.command('cancel', async (ctx) =>{
     await ctx.reply(config.msg.cancelled_msg)
+    ctx.session.paste = ""
     ctx.scene.leave('getUsername')
 })
 getPass.command('cancel', async (ctx) =>{
     await ctx.reply(config.msg.cancelled_msg)
+    ctx.session.paste = ""
     ctx.scene.leave('getPass')
 })
 datadl.command('cancel', async (ctx) =>{
@@ -254,6 +266,7 @@ datadl.command('cancel', async (ctx) =>{
 
 
 bot.command('create', async (ctx) => {
+    ctx.session.paste = ""
     ctx.scene.enter('getPaste')
 })
 bot.help((ctx) => {
