@@ -56,7 +56,7 @@ bot.use(stage.middleware());
 const log_channel = parseInt(process.env.LOG_CHANNEL)
 
 async function ownerLog(method, msg){
-    if(log_channel !== undefined){
+    if(log_channel !== undefined || log_channel == ""){
         // You will get an error if the log chat/channel id is not accessible by bot.
         // To not get that error provide the channel id where your bot is an admin, or a chat id that chatted previously with th bot.
         // The error will be : chat not found.
