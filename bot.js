@@ -469,6 +469,7 @@ loginPaste.action('login-paste', async (ctx) => {
                 });
             ctx.scene.leave('loginPaste')
             } else {
+                ctx.session.file = false;
                 await ctx.telegram.editMessageText(msg.chat.id, msg.message_id, msg.message_id, 'Reading file...')  
                 await ctx.telegram.editMessageText(msg.chat.id, msg.message_id, msg.message_id, 'Creating paste...')
                 await paste.createFromFile({
@@ -773,6 +774,7 @@ guest.action('paste-guest', async (ctx) => {
             }
         });
     } else {
+        ctx.session.file = false;
         await ctx.telegram.editMessageText(msg.chat.id, msg.message_id, msg.message_id, 'Reading file...')  
         await ctx.telegram.editMessageText(msg.chat.id, msg.message_id, msg.message_id, 'Creating paste...')
         await paste.createFromFile({
