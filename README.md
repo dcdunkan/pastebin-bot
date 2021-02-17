@@ -1,6 +1,6 @@
 #### I know that this code is not perfect. Even good. I am a total beginner, so please forgive the mistakes that have been made. I will be correcting them while i go forward. Please star this if you liked it.
 # $ pastebin-bot.js V2
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dcdunkan)](https://github.com/dcdunkan/pastebin-bot)
+
 ### Version 2 of Pastebin Bot
 Advanced functional Pastebin Telegram Bot made using <a href="https://npmjs.com/package/better-pastebin">better-pastebin</a> and <a href="https://npmjs.com/package/telegraf">TelegrafJS</a>. This bot will help you to create pastes (Texts) on [Pastebin](https://pastebin.com) <sup id="footn1">[[1]](#pastebin-description)</sup> which is a text cloud. Here is a running example of the bot <a href="https://telegram.me/pstbinbot">@pstbinbot</a> on telegram.
 
