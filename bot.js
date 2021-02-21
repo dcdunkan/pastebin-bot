@@ -840,54 +840,6 @@ guest.action('paste-guest', async (ctx) => {
     }
 })
 
-bot.command('broad', (ctx) => {
-  ctx.scene.enter('broadcast')
-})
-
-broadcast.enter((ctx)=> {
-  ctx.reply('Send the message you want to broadcast.')
-})
-
-broadcast.on('text', (ctx) => {
-  ctx.session.msg = ctx.message.text;
-  ctx.reply('Start Broadcasting?',
-    { reply_markup: { inline_keyboard: [[ { text: 'Yes', callback_data: 'y' }, { text: 'No', callback_data: 'n' } ]] } }
-  )
-})
-// Testing the broadcast feature! Sorry about the interruption, we were testing a feature to broadcast messages to the users!
-var broadCount = 0;
-broadcast.action('y', (ctx) => {
-  ctx.reply('Started.',
-    { reply_markup: { inline_keyboard: [[ { text: 'Refresh', callback_data: 'refresh' } ]] } }
-  )
-  getUids().then((res) => {
-    res.forEach((element) => {
-      bot.telegram.sendMessage(element, ctx.session.msg)
-      console.log(`sent to ${element}`)
-      broadCount++;
-      if(element == res[res.length - 1]){
-        broadCount = 0;
-        console.log('finished')
-        ctx.reply('broadcast finished')
-      }
-    })
-  }).catch((err) => {
-    ctx.reply('Got error while fetching user ids.')
-    console.log(err)
-  })
-})
-
-broadcast.action('refresh', (ctx) => {
-  ctx.editMessageText(`Sent to ${broadCount} users.`,
-    { reply_markup: { inline_keyboard: [[ { text: 'Refresh', callback_data: 'refresh' } ]] } }
-  )
-})
-
-broadcast.command('cancel', (ctx) => {
-  ctx.reply('Left from broadcasting')
-  ctx.scene.leave('broadcast')
-})
-
 console.log(`pastebin-bot compiled successfully and now running as @${process.env.BOT_USERNAME}`)
 bot.launch({
   webhook: {
