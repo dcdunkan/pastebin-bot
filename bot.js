@@ -16,6 +16,9 @@ const bot = new Telegraf(process.env.BOT_TOKEN, {telegram: {webhookReply: false}
 const stage = new Stage();
 
 // Scene Registration
+const broadcast = new Scene('broadcast');
+stage.register(broadcast);
+
 const getPaste = new Scene('getPaste');
 stage.register(getPaste);
 const getName = new Scene('getName');
