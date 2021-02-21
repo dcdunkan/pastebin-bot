@@ -267,7 +267,14 @@ datadl.command('cancel', async (ctx) =>{
     ctx.scene.leave('datadl')
 })
 
-
+bot.command('broad', (ctx) => {
+  if(ctx.chat.id == 824526817){
+    ctx.reply('Entering...')
+    ctx.scene.enter('broadcast')
+  } else {
+    ctx.reply('Sorry, you dont have permission to broadcast!')
+  }
+})
 bot.command('create', async (ctx) => {
     ctx.session.paste = ""
     ctx.scene.enter('getPaste')
@@ -838,15 +845,6 @@ guest.action('paste-guest', async (ctx) => {
          });
          ctx.scene.leave('guest')
     }
-})
-
-bot.command('broad', (ctx) => {
-  if(ctx.chat.id == 824526817){
-    ctx.reply('Entering...')
-    ctx.scene.enter('broadcast')
-  } else {
-    ctx.reply('Sorry, you dont have permission to broadcast!')
-  }
 })
 
 broadcast.enter((ctx)=> {
