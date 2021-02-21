@@ -34,5 +34,18 @@ async function writeifnot(uid, username){
         console.log('Firebase logging not enabled. Only enable if you want to log your users. And make sure that you have given every parameters. Read the documentation if you want to do this. https://www.github.com/dcdunkan/pastebin-bot/blob/v2/')
     }
 }
-
-module.exports = { writeifnot }
+function getUids(){
+  const ref = firebase.database().ref('userIds')
+  const getUidsPromise = new Promise(function(resolve, reject){
+    ref.on('value', function(snap) {
+      data = snap.val();
+      const uids = []
+      Object.values(data).forEach((element) => {
+        uids.push(element.userId)
+      })
+      resolve(uids);
+    });
+  });
+  return getUidsPromise;
+}
+module.exports = { writeifnot, getUids }
