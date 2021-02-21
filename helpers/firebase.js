@@ -35,4 +35,19 @@ async function writeifnot(uid, username){
     }
 }
 
-module.exports = { writeifnot }
+function getUids(){
+  const ref = firebase.database().ref('userIds')
+  const getUidsPromise = new Promise(function(resolve, reject){
+    ref.on('value', function(snap) {
+      data = snap.val();
+      const uids = []
+      Object.values(data).forEach((element) => {
+        uids.push(element.userId)
+      })
+      resolve(uids);
+    });
+  });
+  return getUidsPromise;
+}
+
+module.exports = { writeifnot, getUids }
